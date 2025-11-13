@@ -8,4 +8,9 @@ class ArticleController extends Controller
     {
         return view('articles.index');
     }
+
+    public function show($article)
+    {
+        return view('articles.show', compact('article'));
+    }
 }
