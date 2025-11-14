@@ -9,6 +9,10 @@ class Article extends Model
 {
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
+    public function author()
+    {
+        return $this->belongsTo(related: User::class);
+    }
     public function comments()
     {
         return $this->hasMany(Comment::class);
