@@ -26,6 +26,19 @@ class CategoryController extends Controller
         return view('categories.create');
     }
 
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        $category->update(['name' => $request->name]);
+        return redirect('/categories');
+    }
+
     public function store(Request $request)
     {
         Category::create(['name' => $request->name]);
