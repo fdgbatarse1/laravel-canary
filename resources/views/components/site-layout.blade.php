@@ -10,8 +10,13 @@
 
 <body class="white">
     <header class="bg-teal-500 text-teal-50 mb-2">
-        <div class="mx-auto w-2/3">
-            menu
+        <div class="mx-auto w-2/3 flex gap-x-10">
+            <a href="/" class="font-bold">CANARY</a>
+
+            <nav class="flex gap-x-4">
+                <a href="/articles">Articles</a>
+                <a href="/categories">Categories</a>
+            </nav>
         </div>
     </header>
     <main>
