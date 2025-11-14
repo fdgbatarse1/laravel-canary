@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -18,5 +19,16 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         return view('categories.show', compact('category'));
+    }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    public function store(Request $request)
+    {
+        Category::create(['name' => $request->name]);
+        return redirect('/categories');
     }
 }
