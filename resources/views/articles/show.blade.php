@@ -1,3 +1,3 @@
-<x-site-layout>
-    Testing the show for {{$article}}
+<x-site-layout title="{{$article->title}}">
+    Testing the show for {{$article->content}}
 </x-site-layout>

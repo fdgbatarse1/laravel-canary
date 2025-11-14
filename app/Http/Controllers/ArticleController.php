@@ -12,8 +12,9 @@ class ArticleController extends Controller
         return view('articles.index', compact('articles'));
     }
 
-    public function show($article)
+    public function show(int $id)
     {
+        $article = Article::find($id);
         return view('articles.show', compact('article'));
     }
 }
