@@ -34,8 +34,9 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validated = $request->validate(['name' => ['required', 'string', 'min:5', 'max:255']]);
         $category = Category::find($id);
-        $category->update(['name' => $request->name]);
+        $category->update($validated);
         return redirect('/categories');
     }
 
