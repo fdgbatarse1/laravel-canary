@@ -42,8 +42,8 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $validate = $request->validate(['name' => ['required', 'string', 'min:5', 'max:255']]);
-        Category::create($validate);
+        $validated = $request->validate(['name' => ['required', 'string', 'min:5', 'max:255']]);
+        Category::create($validated);
         return redirect('/categories');
     }
     public function destroy($id)
