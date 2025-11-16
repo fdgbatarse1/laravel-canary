@@ -9,6 +9,7 @@ Route::get('articles/{id}', [\App\Http\Controllers\ArticleController::class, 'sh
 
 Route::resource('categories', \App\Http\Controllers\CategoryController::class)->only(['index', 'show']);
 Route::resource('admin/categories', \App\Http\Controllers\AdminCategoryController::class);
+Route::resource('admin/articles', \App\Http\Controllers\AdminArticleController::class);
 
 Route::get('/dashboard', function () {
     return view('userzone.dashboard');
